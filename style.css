@@ -1,58 +1,289 @@
+/* ==========================
+   McAfee Guide Style Sheet
+========================== */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#f6f8fb;
-color:#222;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+color:#333;
 line-height:1.7;
 }
 
+/* Header */
+
+.header{
+position:sticky;
+top:0;
+z-index:999;
+background:#c01818;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
 .container{
-width:90%;
-max-width:1100px;
+max-width:1300px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+}
+
+.logo h2{
+color:#fff;
+font-size:28px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffe082;
+}
+
+/* Layout */
+
+.wrapper{
+display:flex;
+max-width:1400px;
 margin:auto;
 }
 
-header{
-background:#d91f26;
-color:white;
-padding:90px 20px;
-text-align:center;
+/* Sidebar */
+
+.sidebar{
+width:260px;
+background:#fff;
+padding:30px 20px;
+border-right:1px solid #ddd;
+position:sticky;
+top:70px;
+height:calc(100vh - 70px);
+overflow:auto;
 }
 
-header h1{
-font-size:48px;
-margin-bottom:15px;
+.sidebar h3{
+margin-bottom:20px;
+color:#c01818;
 }
 
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:white;
-color:#d91f26;
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+margin:15px 0;
+}
+
+.sidebar a{
 text-decoration:none;
-font-weight:bold;
-border-radius:5px;
-margin-top:20px;
+color:#444;
+font-weight:600;
+transition:.3s;
 }
+
+.sidebar a:hover{
+color:#c01818;
+padding-left:5px;
+}
+
+/* Main */
+
+.content{
+flex:1;
+padding:40px;
+}
+
+/* Hero */
+
+.hero{
+background:linear-gradient(135deg,#c01818,#ff4f4f);
+color:#fff;
+padding:60px;
+border-radius:15px;
+margin-bottom:40px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+max-width:700px;
+margin-bottom:25px;
+}
+
+.button{
+display:inline-block;
+background:#fff;
+color:#c01818;
+padding:14px 28px;
+border-radius:8px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.button:hover{
+background:#ffe082;
+}
+
+/* Sections */
 
 section{
-padding:60px 0;
+margin-bottom:60px;
 }
 
-h2{
+section h2{
+font-size:34px;
 margin-bottom:20px;
-color:#d91f26;
+color:#c01818;
 }
+
+section p{
+margin-bottom:18px;
+}
+
+/* Cards */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:25px;
+}
+
+.card{
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#c01818;
+}
+
+/* Steps */
+
+.step{
+background:#fff;
+padding:20px;
+margin-bottom:20px;
+border-left:6px solid #c01818;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.step h3{
+margin-bottom:10px;
+}
+
+/* FAQ */
+
+.faq{
+background:#fff;
+padding:25px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.faq h3{
+color:#c01818;
+margin-bottom:12px;
+}
+
+/* Footer */
 
 footer{
 background:#222;
 color:#fff;
-padding:40px;
 text-align:center;
+padding:35px;
+margin-top:60px;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.wrapper{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+position:relative;
+height:auto;
+top:0;
+border-right:none;
+border-bottom:1px solid #ddd;
+}
+
+.content{
+padding:25px;
+}
+
+.hero{
+padding:40px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.container{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:30px;
+}
+
+section h2{
+font-size:28px;
+}
+
+.button{
+display:block;
+text-align:center;
+}
+
 }
