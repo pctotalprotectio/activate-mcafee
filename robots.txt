@@ -1,1 +1,8 @@
 
+User-agent: *
+
+Allow: /
+
+Sitemap:
+
+https://YOURDOMAIN.github.io/sitemap.xml
